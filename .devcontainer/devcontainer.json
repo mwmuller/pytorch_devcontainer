@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "csi_5110",
+	"image": "csi_5110_${localEnv:USER}",  // Make sure this image exists or is correctly built
+	"initializeCommand": "${localWorkspaceFolder}/.devcontainer/initializeCommand.sh",  // Make sure this script exists and is executable
+	"containerEnv": {
+	  "SHELL": "/bin/bash"
+	},
+	"runArgs": [
+	  "--gpus", "all",            // Enable GPU access
+	  "--runtime=nvidia"          // Ensure NVIDIA runtime is used
+	],
+	"customizations": {
+	  "vscode": {
+		"extensions": [
+		  "ms-vscode.cpptools",        // C++ Tools
+		  "mshr-h.veriloghdl",         // Verilog HDL Tools
+		  "ms-python.python",          // Python Extension
+		  "ms-python.debugpy",         // Python Debugger
+		  "ms-toolsai.jupyter-keymap", // Jupyter Keymap Extension
+		  "sbsnippets.pytorch-snippets" // PyTorch Snippets
+		],
+		"settings": {
+		  "terminal.integrated.defaultProfile.linux": "bash"  // Ensure Bash is the default terminal shell
+		}
+	  }
+	}
+  }
+  
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+
